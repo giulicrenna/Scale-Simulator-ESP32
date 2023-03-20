@@ -1,0 +1,101 @@
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: rgba(94, 151, 181, 0.754);
+}
+
+h2 {
+    position: relative;
+    text-align: center;
+    margin-top: 30px;
+    color: rgb(27, 26, 26);
+    font-size: 1.8em;
+    font-family: 'Monaco', sans-serif;
+    top: -20px;
+}
+
+.protocolo1 {
+    text-align: center;
+    white-space: pre-line;
+}
+
+.protocolo1 img {
+    height: 120px;
+}
+
+.protocolo1 p {
+    position: relative;
+    color: rgb(0, 0, 0);
+    font-size: 1.7em;
+    font-family: 'Monaco', sans-serif;
+    margin-top: 10px;
+    top: 10px;
+}
+
+.aceptar {
+    width: 230px;
+    height: 50px;
+    justify-content: center;
+    background: transparent;
+    border: 3px solid rgb(255, 255, 255);
+    outline: none;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 1.1em;
+    color: #000000;
+    font-weight: 500;
+    transition: .5s;
+}
+
+.aceptar:hover {
+    background: rgb(127, 134, 135);
+    color: rgb(251, 251, 251);
+}
+
+select {
+    position: relative;
+    width: 300px;
+    padding: 12px;
+    background-color: lightblue;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 30px;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2212%22%20height%3D%2212%22%20viewBox%3D%220%200%2012%2012%22%3E%3Ctitle%3Edown-arrow%3C%2Ftitle%3E%3Cg%20fill%3D%22%23000000%22%3E%3Cpath%20d%3D%22M10.293%2C3.293%2C6%2C7.586%2C1.707%2C3.293A1%2C1%2C0%2C0%2C0%2C.293%2C4.707l5%2C5a1%2C1%2C0%2C0%2C0%2C1.414%2C0l5-5a1%2C1%2C0%2C1%2C0-1.414-1.414Z%22%20fill%3D%22%23000000%22%3E%3C%2Fpath%3E%3C%2Fg%3E%3C%2Fsvg%3E");
+    background-size: .6em;
+    background-position: calc(100% - 1.3em) center;
+    background-repeat: no-repeat;
+    margin-top: -5px;
+}
+
+input {
+    position: relative;
+    width: 200px;
+    padding: 8px;
+    background-color: lightblue;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: 30px;
+    top: -25px;
+}
+
+.trama{
+    position: relative;
+    top: -75px;
+}
+
+.delay p{
+    position: relative;
+    top: 10px;
+}
+
+.tram{
+    position: relative;
+    top: -100px;
+}

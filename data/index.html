@@ -1,12 +1,24 @@
-<h1>Simulador de balanzas</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="protocolo1">
+    <img style="display: block;" controls="controls" src="logo">
+<h2>SIMULADOR DE BALANZAS</h2>
 <form action="/get">
-    <p>Protocolo</p>
+    <p>PROTOCOLO</p>
     <select id="protocolo" name="protocolo">
         <option value="rs232">RS232</option>
         <option value="rs485">RS485</option>
     </select>
-    <p>Baudrate</p>
-    <select id="baudrate" name="baudrate">
+    <p>BAUDRATE</p>
+    <select id="baudrate" name="baudrate" >
         <option value="1200">1200</option>
         <option value="1800">1800</option>
         <option value="2400">2400</option>
@@ -23,7 +35,7 @@
         <option value="576000">576000</option>
         <option value="921600">921600</option>
     </select>
-    <p>Paridad</p>
+    <p>PARIDAD</p>
     <select id="paridad" name="paridad">
         <option value="SERIAL_5N1">Serial 5N1</option>
         <option value="SERIAL_6N1">Serial 6N1</option>
@@ -36,7 +48,7 @@
         <option value="SERIAL_5E1">Serial 5E1</option>
         <option value="SERIAL_6E1">Serial 6E1</option>
         <option value="SERIAL_7E1">Serial 7E1</option>
-        <option value="SERIAL_8E1">Serial 8E1</option>
+        <option value="SERIAL_8E1">Serial 8E1 (default)</option>
         <option value="SERIAL_5E2">Serial 5E2</option>
         <option value="SERIAL_6E2">Serial 6E2</option>
         <option value="SERIAL_7E2">Serial 7E2</option>
@@ -50,17 +62,27 @@
         <option value="SERIAL_7O2">Serial 7O2</option>
         <option value="SERIAL_8O2">Serial 8O2</option>
     </select>
-    <p>Delay entre mensajes (mS)</p>
-    <p><input id="delay" required = "" max="900000" min="0" name="delay" type="number" /></p>
-    <p>Trama</p>
-    <select id="trama" name="trama">
+    <div class="delay">
+    <p>DELAY (mS)</p>
+    <p><input id="delay" required = "" value = "0" max="900000" min="0" name="delay" type="number" /></p>
+    </div>
+    <div class="trama">
+    <p>TRAMA</p>
+    <select id="trama" name="trama" >
         <option value="trama_1">NNNNKG\r\n</option>
         <option value="trama_2">NNNNKG\t</option>
         <option value="trama_3">NNNNKG\n</option>
         <option value="trama_4">NNNNKG</option>
     </select>
-    <p>Trama personalizada (dejar en blanco)</p>
+</div>
+    <div class="tram">
+    <p>TRAMA PERSONALIZADA</p>
     <p><input id="trama_custom" maxlength="16" name="trama_custom" size="25" type="text" /></p>
-    <br>
-    <button type="aceptar">Aceptar</button>
+    <br><br><br><br>
+    <button id="aceptar" class="aceptar" >Aceptar</button>
+</div>
+
+</div>
 </form>
+</body>
+</html>
