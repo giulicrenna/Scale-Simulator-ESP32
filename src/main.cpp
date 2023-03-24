@@ -261,6 +261,7 @@ void blink(int timelapse)
 void off()
 {
     digitalWrite(PIN_RED, LOW);
+    delay(20);
 }
 
 void on()
@@ -270,25 +271,25 @@ void on()
 
 void printParams()
 {
-    on();
+    off();
     Serial.println("###############");
     Serial.println(String(config.baudrate));
     Serial.println(config.parity);
     Serial.println(config.trama);
     Serial.println(config.delay);
     Serial.println("");
-    off();
+    on();
 }
 
 void printTrama_1()
 {
     if (millis() - previousTrama_1 >= config.delay)
     {
-        on();
+        off();
         Serial.print(
             String(random(1000, 9999)) +
             "KG\r\n");
-        off();
+        on();
         previousTrama_1 = millis();
     }
 }
