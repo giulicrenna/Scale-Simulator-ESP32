@@ -1,88 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Simulador de Balanzas</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="protocolo1">
-    <img style="display: block;" controls="controls" src="logo">
-<h2>SIMULADOR DE BALANZAS</h2>
-<form action="/get">
-    <p>PROTOCOLO</p>
-    <select id="protocolo" name="protocolo">
-        <option value="rs232">RS232</option>
-        <option value="rs485">RS485</option>
-    </select>
-    <p>BAUDRATE</p>
-    <select id="baudrate" name="baudrate" >
-        <option value="1200">1200</option>
-        <option value="1800">1800</option>
-        <option value="2400">2400</option>
-        <option value="4800">4800</option>
-        <option value="9600">9600</option>
-        <option value="19200">19200</option>
-        <option value="28800">28800</option>
-        <option value="38400">38400</option>
-        <option value="57600">57600</option>
-        <option value="76800">76800</option>
-        <option value="115200">115200</option>
-        <option value="230400">230400</option>
-        <option value="460800">460800</option>
-        <option value="576000">576000</option>
-        <option value="921600">921600</option>
-    </select>
-    <p>PARIDAD</p>
-    <select id="paridad" name="paridad">
-        <option value="SERIAL_5N1">Serial 5N1</option>
-        <option value="SERIAL_6N1">Serial 6N1</option>
-        <option value="SERIAL_7N1">Serial 7N1</option>
-        <option value="SERIAL_8N1">Serial 8N1</option>
-        <option value="SERIAL_5N2">Serial 5N2</option>
-        <option value="SERIAL_6N2">Serial 6N2</option>
-        <option value="SERIAL_7N2">Serial 7N2</option>
-        <option value="SERIAL_8N2">Serial 8N2</option>
-        <option value="SERIAL_5E1">Serial 5E1</option>
-        <option value="SERIAL_6E1">Serial 6E1</option>
-        <option value="SERIAL_7E1">Serial 7E1</option>
-        <option value="SERIAL_8E1">Serial 8E1 (default)</option>
-        <option value="SERIAL_5E2">Serial 5E2</option>
-        <option value="SERIAL_6E2">Serial 6E2</option>
-        <option value="SERIAL_7E2">Serial 7E2</option>
-        <option value="SERIAL_8E2">Serial 8E2</option>
-        <option value="SERIAL_5O1">Serial 5O1</option>
-        <option value="SERIAL_6O1">Serial 6O1</option>
-        <option value="SERIAL_7O1">Serial 7O1</option>
-        <option value="SERIAL_8O1">Serial 8O1</option>
-        <option value="SERIAL_5O2">Serial 5O2</option>
-        <option value="SERIAL_6O2">Serial 6O2</option>
-        <option value="SERIAL_7O2">Serial 7O2</option>
-        <option value="SERIAL_8O2">Serial 8O2</option>
-    </select>
-    <div class="delay">
-    <p>DELAY (mS)</p>
-    <p><input id="delay" required = "" value = "0" max="900000" min="0" name="delay" type="number" /></p>
-    </div>
-    <div class="trama">
-    <p>TRAMA</p>
-    <select id="trama" name="trama" >
-        <option value="trama_1">NNNNKG\r\n</option>
-        <option value="trama_2">NNNNKG\t</option>
-        <option value="trama_3">NNNNKG\n</option>
-        <option value="trama_4">NNNNKG</option>
-    </select>
-</div>
-    <div class="tram">
-    <p>TRAMA PERSONALIZADA</p>
-    <p><input id="trama_custom" maxlength="16" name="trama_custom" size="25" type="text" /></p>
-    <br><br><br><br>
-    <button id="aceptar" class="aceptar" >Aceptar</button>
-</div>
 
-</div>
-</form>
+<body>
+        <header style="display: flex; justify-content: center; align-items: center; flex-direction: column; padding-bottom: 0 !important;">
+            <img style="height: 80px; margin-bottom: 10px;" src="logo.png">
+            <h2 style="margin-bottom: 0 !important; text-align: center;">SIMULADOR DE BALANZAS </h2>
+        </header>
+    <main class="container">
+        <form action="/get">
+
+            <div class="grid">
+                <label for="protocolo">
+                    Protocolo
+                    <select id="protocolo" name="protocolo">
+                        <option value="rs232">RS232</option>
+                        <option value="rs485">RS485</option>
+                    </select>
+                </label>
+
+                <label for="baudrate">
+                    Baudrate
+                    <select id="baudrate" name="baudrate">
+                        <option value="1200">1200</option>
+                        <option value="1800">1800</option>
+                        <option value="2400">2400</option>
+                        <option value="4800">4800</option>
+                        <option value="9600">9600</option>
+                        <option value="19200">19200</option>
+                        <option value="28800">28800</option>
+                        <option value="38400">38400</option>
+                        <option value="57600">57600</option>
+                        <option value="76800">76800</option>
+                        <option value="115200" selected>115200</option>
+                        <option value="230400">230400</option>
+                        <option value="460800">460800</option>
+                        <option value="576000">576000</option>
+                        <option value="921600">921600</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="grid">
+
+                <label for="paridad">
+                    Paridad
+                <select id="paridad" name="paridad">
+                    <option value="SERIAL_5N1">Serial 5N1</option>
+                    <option value="SERIAL_6N1">Serial 6N1</option>
+                    <option value="SERIAL_7N1">Serial 7N1</option>
+                    <option value="SERIAL_8N1" selected>Serial 8N1</option>
+                    <option value="SERIAL_5N2">Serial 5N2</option>
+                    <option value="SERIAL_6N2">Serial 6N2</option>
+                    <option value="SERIAL_7N2">Serial 7N2</option>
+                    <option value="SERIAL_8N2">Serial 8N2</option>
+                    <option value="SERIAL_5E1">Serial 5E1</option>
+                    <option value="SERIAL_6E1">Serial 6E1</option>
+                    <option value="SERIAL_7E1">Serial 7E1</option>
+                    <option value="SERIAL_8E1">Serial 8E1</option>
+                    <option value="SERIAL_5E2">Serial 5E2</option>
+                    <option value="SERIAL_6E2">Serial 6E2</option>
+                    <option value="SERIAL_7E2">Serial 7E2</option>
+                    <option value="SERIAL_8E2">Serial 8E2</option>
+                    <option value="SERIAL_5O1">Serial 5O1</option>
+                    <option value="SERIAL_6O1">Serial 6O1</option>
+                    <option value="SERIAL_7O1">Serial 7O1</option>
+                    <option value="SERIAL_8O1">Serial 8O1</option>
+                    <option value="SERIAL_5O2">Serial 5O2</option>
+                    <option value="SERIAL_6O2">Serial 6O2</option>
+                    <option value="SERIAL_7O2">Serial 7O2</option>
+                    <option value="SERIAL_8O2">Serial 8O2</option>
+                </select>
+            </label>
+
+            <label for="delay">
+                Delay (mS)
+                <input id="delay" required="" value="0" max="900000" min="0" name="delay" type="number" />
+            </label>
+            
+            <label for="trama">
+                Trama
+                <select id="trama" name="trama">
+                    <option value="trama_1">NNNNKG\r\n</option>
+                    <option value="trama_2">NNNNKG\t</option>
+                    <option value="trama_3">NNNNKG\n</option>
+                    <option value="trama_4">NNNNKG</option>
+                </select>
+            </label>
+        </div>
+
+            <label for="id">
+                Trama personalizada
+                <p><input id="trama_custom" maxlength="16" name="trama_custom" size="25" type="text" /></p>
+                <br>
+                <button id="aceptar" class="aceptar">Aceptar</button>
+            </label>
+
+
+            </div>
+        </form>
+    </main>
 </body>
+
 </html>

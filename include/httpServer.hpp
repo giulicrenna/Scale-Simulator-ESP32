@@ -40,7 +40,7 @@ public:
     server.on("/allvalues", HTTP_GET, [](AsyncWebServerRequest *request)
               { request->send(200, "application/json", processor()); });
               */
-    server.on("/logo", HTTP_GET, [](AsyncWebServerRequest *request)
+    server.on("/logo.png", HTTP_GET, [](AsyncWebServerRequest *request)
               { request->send(LittleFS, "/logo.png", "image/png"); });
 
     server.on("/get", HTTP_GET, [](AsyncWebServerRequest *request)
