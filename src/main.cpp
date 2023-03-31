@@ -38,7 +38,7 @@ void task1(void *parameters)
             myData.putInt("baudrate", config.baudrate);
             myData.putString("paridad", config.parity);
             myData.putInt("delay", config.delay);
-            myData.putString("trama", config.trama);
+            myData.putString("trama", config.trama);    
             myData.putString("trama_custom", config.trama_personalizada);
             currentState = SETUP_PREFERENCES;
             break;
@@ -150,9 +150,9 @@ void task1(void *parameters)
                              RXD_232,
                              TXD_232);
             }
-            else if (config.protocol == "rs385")
+            else if (config.protocol == "rs485")
             {
-                pinMode(RE, OUTPUT);
+                digitalWrite(RE, HIGH);
                 Serial.begin(config.baudrate,
                              uart_config,
                              RXD_485,
